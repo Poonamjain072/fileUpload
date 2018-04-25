@@ -2,6 +2,7 @@
 
 ## Install npm packages
 npm install
+
 npm start
 
 # Start the server
