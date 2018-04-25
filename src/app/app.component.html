@@ -7,10 +7,10 @@
         <input type="text" class="form-control" placeholder="Name of the current folder" [(ngModel)]='directoryName'>
     </div>
     <div class="col-md-3">
-        <button type="button" class="btn btn-outline-secondary" (click)='createDirectory()'>
+        <button type="button" [disabled]="directoryName==''" class="btn btn-outline-secondary button-grey" (click)='createDirectory()'>
             <i class="fa fa-folder mr-1 outline-grey"></i>Create new folder</button>
         <label class="btn btn-primary mb-0">
-            <input type="file" [(ngModel)]='fileInput' (change)='upload($event)'>
+            <input type="file" [(ngModel)]='fileInput' (change)='upload($event)' (click)='fileInput=null;files=[]'>
             <i class="fa fa-file mr-1 upload-outline"></i>Upload file</label>
     </div>
 </div>

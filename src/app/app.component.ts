@@ -78,6 +78,10 @@ export class AppComponent {
       console.log("response", response);
       if (response.status == 200) {
         this.directoryName = '';
+        this.successMessage = 'Folder created.';
+        setTimeout(() => {
+          this.successMessage = '';
+        }, 3000);
         this.getAllDocuments();
       }
     });

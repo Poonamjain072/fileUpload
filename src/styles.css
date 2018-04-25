@@ -25,7 +25,7 @@ input[type=file]{
 .outline-grey{
   color: transparent;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #ced4da;
+  -webkit-text-stroke-color: #dedede;
 }
 
 .overflow-x-hidden{
@@ -42,6 +42,11 @@ input[type=file]{
 }
 .header-style{
   background: #37A6BF !important;
+}
+
+.button-grey{
+  color: #dedede;
+  border-color: #dedede;
 }
 /* nav #37A6BF
 table text #727272
