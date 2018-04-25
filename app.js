@@ -9,6 +9,7 @@ var dir = 'uploads/';
 var documentDetails = require('./models/documentDetails');
 var fs = require('fs');
 var destination = dir;
+const uuidv1 = require('uuid/v1');
 
 var upload = multer.diskStorage({ //multers disk storage settings
 
@@ -74,7 +75,7 @@ app.post('/api/upload', function (req, res, next) {
             
         }
         documentDetails.update({
-            id: req.file.originalname + Date.now()
+            id: req.file.originalname + uuidv1()
         }, {
                 path: path,
                 type: req.file.mimetype,
@@ -118,7 +119,7 @@ app.post('/api/createDirectory', function (req, res, next) {
     if (!fs.existsSync(newDirectory)) {
         fs.mkdirSync(newDirectory);
         documentDetails.update({
-            id: req.query.name + Date.now()
+            id: req.query.name + uuidv1()
         }, {
                 path: newDirectory,
                 type: 'Folder',

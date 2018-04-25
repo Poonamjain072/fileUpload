@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class Service {
+    public baseURL = 'http://localhost:8080';
     constructor(private http: Http) {
 
     }
@@ -16,7 +17,7 @@ export class Service {
     }
 
     getAllDocuments(): Observable<any> {
-        return this.http.get(`http://localhost:8080/api/getAllDocuments`)
+        return this.http.get(`${this.baseURL}/api/getAllDocuments`)
             .map(success => success)
             .catch(this.handleError);
     }
@@ -25,7 +26,7 @@ export class Service {
         console.log('service: ', formData, owner, folder);
         let headers = new Headers();
         headers.append('Content-Type', 'multipart/form-data');
-        return this.http.post(`http://localhost:8080/api/upload?owner=` + owner + '&folder=' + folder, formData)
+        return this.http.post(`${this.baseURL}/api/upload?owner=` + owner + '&folder=' + folder, formData)
             .map((success) => success)
             .catch(this.handleError);
     }
@@ -34,7 +35,7 @@ export class Service {
         console.log("name: ", name, 'owner: ', owner);
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post(`http://localhost:8080/api/createDirectory?name=` + name + '&owner=' + owner + '&folder=' + folder, headers)
+        return this.http.post(`${this.baseURL}/api/createDirectory?name=` + name + '&owner=' + owner + '&folder=' + folder, headers)
             .map((success) => success)
             .catch(this.handleError);
     }

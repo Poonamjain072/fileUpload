@@ -16,6 +16,13 @@
 </div>
 <div class="row">
     <div class="col-md-8 offset-md-2">
+        <div class="alert alert-warning" role="alert" *ngIf='errorMessage'>
+            {{errorMessage}}
+        </div>
+        <div class="alert alert-success" role="alert" *ngIf='successMessage'>
+            {{successMessage}}
+        </div>
+
         <div class="text-center mb-2">Current Directory: {{folder}}</div>
         <table class="table">
             <thead class="table-header">
