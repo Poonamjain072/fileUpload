@@ -1,0 +1,40 @@
+<header>
+</header>
+
+<div class="row mb-3">
+    <div class="col-md-3 ml-3 font-weight-500">Project File</div>
+    <div class="col-md-5">
+        <input type="text" class="form-control" placeholder="Name of the current folder" [(ngModel)]='directoryName'>
+    </div>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-outline-secondary" (click)='createDirectory()'>
+            <i class="fa fa-folder mr-1 outline-grey"></i>Create new folder</button>
+        <label class="btn btn-primary mb-0">
+            <input type="file" [(ngModel)]='fileInput' (change)='upload($event)'>
+            <i class="fa fa-file mr-1 upload-outline"></i>Upload file</label>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="text-center mb-2">Current Directory: {{folder}}</div>
+        <table class="table">
+            <thead class="table-header">
+                <tr>
+                    <th>Name</th>
+                    <th>Owner</th>
+                    <th>Last Modified</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let document of showDocuments'>
+                    <td (click)="openFolder(document.name,document.type)" class="font-weight-500">
+                        <i class="fa mr-1" [ngClass]="{'fa-image':document.type=='image/png',
+                        'fa-folder':document.type=='Folder',
+                         'fa-file':document.type=='application/pdf'}"></i>{{document.name}}</td>
+                    <td>{{document.owner}}</td>
+                    <td>{{document.lastModified | date}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
