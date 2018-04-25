@@ -1,10 +1,10 @@
-#File and folder creation
+#  File and folder creation
 
-##install npm packages
+## Install npm packages
 npm install
-ng build
+npm start
 
-##To run the application
-nodemon app.js or node app.js
+# Start the server
+node app.js or nodemon app.js
 
 Note: This app works by default on localhost, for running client on a different host please change the baseURL in app.service.ts file.
