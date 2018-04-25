@@ -38,8 +38,8 @@
                         <i class="fa mr-1" [ngClass]="{'fa-image':document.type=='image/png',
                         'fa-folder':document.type=='Folder',
                          'fa-file':document.type=='application/pdf'}"></i>{{document.name}}</td>
-                    <td>{{document.owner}}</td>
-                    <td>{{document.lastModified | date}}</td>
+                    <td class="table-text">{{document.owner}}</td>
+                    <td class="table-text">{{document.lastModified | date}}</td>
                 </tr>
             </tbody>
         </table>

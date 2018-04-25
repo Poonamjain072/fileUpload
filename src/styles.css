@@ -31,3 +31,19 @@ input[type=file]{
 .overflow-x-hidden{
   overflow-x: hidden;
 }
+
+.table-header{
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+.table-text{
+  color: #727272;
+}
+.header-style{
+  background: #37A6BF !important;
+}
+/* nav #37A6BF
+table text #727272
+table header #bdbdbd
+blue line #469df6 */
